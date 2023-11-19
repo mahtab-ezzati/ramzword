@@ -5,5 +5,5 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('', home),
+    path('', home, name='home'),
 ]
