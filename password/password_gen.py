@@ -1,15 +1,19 @@
-from random import randint
+from random import choice, shuffle
+import string
 
 def passwordgen():
-    # capital = [chr(i) for i in range(65, 91)]
-    # small = [chr(i) for i in range(97, 123)]
-    # special = ['!', '@', '#', '$', '%', '&']
-    # number = [str(i) for i in range(0, 10)]
-
-    char_ = [chr(i) for i in range(65, 91)]
-    char_ += [chr(i) for i in range(97, 123)]
-    char_ += ['!', '@', '#', '$', '%', '&']
-    char_ += [str(i) for i in range(0, 10)]
-    
-    return ''.join([char_[randint(0, len(char_)-1)] for i in range(15)])
+    small = string.ascii_lowercase
+    capital = string.ascii_uppercase
+    special = string.punctuation
+    num = string.digits
+   
+    password = []
+    password += [choice(small) for _ in range(4)]
+    password += [choice(capital) for _ in range(4)]
+    password += [choice(special) for _ in range(4)]
+    password += [choice(num) for _ in range(4)]
+   
+    shuffle(password)
+   
+    return ''.join(password)
 
