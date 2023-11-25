@@ -98,11 +98,23 @@
       <div
         class="u-border-3 u-border-grey-40 u-container-style u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-group u-radius-50 u-shape-round u-group-1">
         <div class="u-container-layout u-container-layout-1">
-          <a href="https://nicepage.com/ru/c/galereya-html-shablony"
-            class="u-active-none u-btn u-button-style u-hover-none u-none u-text-black u-text-hover-palette-2-base u-btn-1"><span
-              class="u-file-icon u-icon u-icon-1"><img src="{% static 'images/copy.png' %}" alt=""></span>
-          </a>
+
+          <form method="post" class="u-active-none u-btn u-button-style u-hover-none u-none u-text-black u-text-hover-palette-2-base u-btn-1">
+            {% csrf_token %}
+            <span class="u-file-icon u-icon u-icon-1">
+                <button type='text' style='background-color: #e4d1d100; color: #ffffff; border-color: #ffffff00; width: 50px; height: 50px;'>
+                    <span class="u-file-icon u-icon u-icon-2" data-animation-name="" data-animation-duration="0"
+                        data-animation-delay="0" data-animation-direction="">
+                        <img src="{% static 'images/copy.png' %}" alt=""  style="width: 40px; height: 40px;">
+                    </span>
+                </button>
+            </span>
+        </form>
+
+
+
           <a href="{% url 'home'%}"
+            
             class="u-active-none u-btn u-button-style u-hover-none u-none u-text-black u-text-hover-palette-2-base u-btn-2"><span
               class="u-file-icon u-icon u-icon-2" data-animation-name="" data-animation-duration="0"
               data-animation-delay="0" data-animation-direction=""><img src="{% static 'images/refresh.png' %}"

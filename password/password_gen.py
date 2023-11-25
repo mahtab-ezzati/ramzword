@@ -16,4 +16,3 @@ def passwordgen():
     shuffle(password)
    
     return ''.join(password)
-
